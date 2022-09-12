@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TambahPengeluaran">
+
+    <ImageView
+        android:id="@+id/backMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="18dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
+    <TextView
+        android:id="@+id/textTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:gravity="center_vertical"
+        android:text="Tambah Catatan"
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        android:layout_marginLeft="18dp"
+        app:layout_constraintBottom_toBottomOf="@+id/backMenu"
+        app:layout_constraintStart_toEndOf="@+id/backMenu"
+        app:layout_constraintTop_toTopOf="@+id/backMenu" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="18dp"
+        android:layout_marginTop="18dp"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textTitle">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="18dp"
+            android:layout_marginTop="8dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:text="Tanggal Pengeluaran"
+                android:textSize="15dp"
+                android:textColor="@color/black"/>
+
+            <EditText
+                android:id="@+id/txtTanggal"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="10dp"
+                android:inputType="none"
+                android:drawableLeft="@drawable/ic_tanggal"
+                android:drawablePadding="10dp"
+                android:textSize="13dp"
+                android:paddingLeft="10dp"
+                android:hint="yyyy-mm-dd"
+                android:focusableInTouchMode="false"
+                android:gravity="center_vertical"
+                android:background="@drawable/input_round"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:text="Nama Pengeluaran"
+                android:textSize="15dp"
+                android:textColor="@color/black"/>
+
+            <EditText
+                android:id="@+id/txtNamaPengeluaran"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="10dp"
+                android:inputType="text"
+                android:gravity="center_vertical"
+                android:drawableLeft="@drawable/ic_bayar"
+                android:drawablePadding="10dp"
+                android:textSize="13dp"
+                android:paddingLeft="10dp"
+                android:hint="Nama Pengeluaran"
+                android:background="@drawable/input_round"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:text="Jumlah Pengeluaran"
+                android:textSize="15dp"
+                android:textColor="@color/black"/>
+
+            <EditText
+                android:id="@+id/txtJumlah"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="10dp"
+                android:inputType="number"
+                android:drawableLeft="@drawable/ic_rp"
+                android:drawablePadding="5dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:hint="0"
+                android:gravity="right|center_vertical"
+                android:background="@drawable/input_round"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:text="Keterangan"
+                android:textSize="15dp"
+                android:textColor="@color/black"/>
+
+            <Spinner
+                android:id="@+id/spinKeterangan"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/spinner_bg"/>
+
+            <Button
+                android:id="@+id/btnSimpan"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="15dp"
+                android:text="SIMPAN DATA"
+                android:textSize="14dp"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/button_save"/>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>
