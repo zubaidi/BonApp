@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.view.View
 import android.view.WindowManager
 import android.view.inputmethod.InputMethodManager
@@ -18,6 +19,10 @@ import java.util.*
 class TambahPengeluaran : AppCompatActivity() {
 
     private lateinit var tpBind: ActivityTambahPengeluaranBinding
+    var tanggal: String = ""
+    var title:String = ""
+    var value = ""
+    var desc:String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,21 +33,25 @@ class TambahPengeluaran : AppCompatActivity() {
         setKategoriPengeluaran()
         setBackMenu()
         setDatePengeluaran()
-        //format rupiah
-        tpBind.txtJumlah.addTextChangedListener(object : TextWatcher{
-            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+        simpanData()
+    }
 
+    private fun simpanData() {
+        tpBind.btnSimpan.setOnClickListener {
+            tanggal = tpBind.txtTanggal.text.toString()
+            title = tpBind.txtNamaPengeluaran.text.toString()
+            value = tpBind.txtJumlah.text.toString()
+            desc = tpBind.spinKeterangan.selectedItem.toString()
+            val setValue = if (value.isNotEmpty()){
+                value.toString().toInt()
+            } else {
+                0
             }
-
-            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-
-            }
-
-            override fun afterTextChanged(p0: Editable?) {
-
-            }
-
-        })
+            Log.d(
+                "hasil:",
+                "${tanggal+" "+title+" "+setValue+" "+desc}"
+            )
+        }
     }
 
     private fun setDatePengeluaran() {
